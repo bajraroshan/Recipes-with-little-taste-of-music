@@ -1,0 +1,61 @@
+body {
+
+    background-color: #e7dddd;
+
+
+    /* border: 1px solid #000 */
+}
+
+main {
+    width: 80%;
+    
+
+}
+.headertag{
+    display: flex;
+
+
+}
+.leftcontainer {
+
+    height: 100%;
+    position: fixed;
+    background-color: #595959;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+
+}
+.inputfelid{
+    border-radius:
+}
+.leftcontainerinput {
+    width: 60%;
+     display: flex;
+    flex-direction: column;
+    margin-top: 30%;
+    margin-right:25% ;
+    
+
+     
+
+
+}
+
+.rightcontainer {
+    height: 1000px;
+    position: fixed;
+}
+
+#left-inputs {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonsearch {
+    cursor: pointer;
+    z-index: 2;
+
+}
