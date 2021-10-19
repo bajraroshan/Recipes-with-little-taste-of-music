@@ -8,10 +8,12 @@
 }
 
 body {
-    background: url(../images/b1.png) no-repeat;
+
     background-size: cover;
-    /* background-color: #2b2b2b; */
+
     box-sizing: border-box;
+
+
 
 
 }
@@ -22,10 +24,9 @@ body {
 
 }
 
-
-
 .leftcontainer {
-
+    background-color: #383838;
+    height: 100vh
 }
 
 .headertag1 {
@@ -34,8 +35,6 @@ body {
     padding: 10px;
     font-size: 40px;
     text-decoration: underline;
-  
-
 }
 
 .leftcontainerinput {
@@ -44,11 +43,16 @@ body {
 
 }
 
+.inputfelid {
+    border-radius: 10px;
+    height: 50px;
+}
+
 .imagecard {
     height: 200px;
     width: 200px;
     position: relative;
-    top:40px; 
+    top: 40px;
 }
 
 .rightcontainerRecipes {
@@ -57,132 +61,65 @@ body {
     border-radius: 30px;
     text-align: center;
     position: absolute;
-    left: 40%; 
-    z-index: -1;    
-
+    left: 40%;
+    z-index: -1;
 }
-.recipetitle,.recipeingredients,.calarios{
-      
+
+.recipetitle,
+.recipeingredients,
+.calarios {
     width: 80%;
-    margin:5px auto;
+    margin: 5px auto;
     text-align: center;
 }
-.recipeingredients{
+
+.recipeingredients {
     border-bottom: 2px solid #383838;
-    /* padding: 2px 0px; */
+    
 }
-.recipetitle{
+
+.recipetitle {
     font-weight: bold;
-   
 
 }
+
 .calarios {
     text-align: center;
     font-weight: bold;
     color: #2fa00d;
     font-size: 50px;
-    
     margin: 5px auto;
-
 }
-.calariostext{
+
+.calariostext {
     font-size: 20px;
-    color: #383838
-    
-}
-
-
-/* 
-.headertag1 {
-    
-    font-weight: bold;
-    text-decoration: underline;
-    font-size:60px;
-
-}
-
-/* .imagecard {
-    width: 200px;
-    height: 150px;
-    position: absolute;
-    top: 60px;
-    left: -90px;
-    border-radius: 50%;
-
-} */
-
-/* .rightcontainerinput {
-    margin-top: 3%;
-    /* position: relative;
-} */
-
-/* .rightcontainerRecipes {
-    background-color: #9c5555;
-    border-radius: 30px;
-    position: absolute
-    box-sizing: border-box;
-    padding: 20px;
-    width: 90%
-} */
-
-
-
-
-
-/* .searchbutton,
-.inputfelid {
-    border-radius: 5px;
-    height: 40px;
-    margin-top: 2%;
-
-} */
-
-
-
-
-/* #left-inputs {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-} */
-
-/* .buttonsearch {
-    cursor: pointer;
-
-
-} */
-
-/* .recipetitle {
-    margin: 0 auto;
-    text-align: center;
-    font-weight: bold;
-    
-    width: 80%;
-    color: #383838
-} */
-
-/* .recipeingredients {
-    margin: 5px auto;
-    text-align: center;
-    width: 80%;
     color: #383838;
-    padding: 10px;
-    border-bottom: 3px solid #383838
-} */
-
-/* .calarios {
-    text-align: left;
     font-weight: bold;
-    color: #2fa00d;
-    font-size: 50px;
-    width: 80%;
-    margin: 5px auto;
-    
 
+}
 
-} */
-/* .calariostext{
-    font-size: 20px;
-    color: #383838
-    
-} */
+.big3 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.Protein,
+.Carbs,
+.Fats {
+
+    padding-top: 25px;
+    align-content: center;
+
+    color: #2fa00d
+}
+
+.audio {
+    margin: 20% auto;
+
+}
+
+.searchbutton {
+    border-radius: 5px;
+    padding: 20px 80px;
+    width: 100%;
+}
