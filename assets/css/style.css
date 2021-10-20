@@ -15,7 +15,7 @@ h1{
 }
 
 body {
-  background: url(../images/mp.image1.jpg) no-repeat;
+  /* background: url(../images/mp.image1.jpg) no-repeat; */
  background-size: cover;
 
  }
@@ -32,7 +32,7 @@ body {
   font-size: 18px;
   padding:12px;
   background-color: transparent;
-  color:white;
+  /* color:white; */
 }
 .searchbox input:hover{
   opacity: .8;

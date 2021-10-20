@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- link of ........style files -->
-  <link rel="stylesheet" href="......" />
+  <!-- <link rel="stylesheet" href="......" /> -->
+  <link rel="stylesheet" href="./assets/css/simplePagination.css">
 
   <!-- link of CSS files -->
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -15,7 +16,7 @@
 </head>
 
 <body>
-
+  <div class="alert alert-danger" role="alert"></div>
   <div class="perrers">
     <h1>Recipes With Little Taste Of Music</h1>
     <p>
@@ -25,13 +26,20 @@
       with local musics.
     </p>
     <div class="searchbox">
-      <input type="text" name="Search" placeholder="Search...">
+      <form action="" id="searchForm">
+      <input type="text" id="ingredient" name="Search" placeholder="Enter ingredient">
+      <input type="text" name="cusine" id="cusine" placeholder="Enter Cusine">
       <button>SEARCH</button>
+    </form>
+    </div>
+    <div class="resultbox">
+      
     </div>
 
 
     <!-- link of jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/jquery.simplePagination.js"></script>
     <!-- link of javascript files -->
     <script src="./assets/js/homepage.js"></script>
   </div>
