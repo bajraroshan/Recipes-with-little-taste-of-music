@@ -17,13 +17,13 @@ body {
 
 .leftcontainer {
     background-color: #383838;
-    height: 100vh
+    min-height: 100vh;
 }
 
 .headertag1 {
     font-weight: bold;
     text-align: left;
-    padding: 10px;
+    padding: 20px 60px;
     font-size: 40px;
 }
 
@@ -36,22 +36,25 @@ body {
     border-radius: 10px;
     height: 50px;
 }
-
-.imagecard {
-    height: 200px;
-    width: 200px;
-    position: relative;
-    top: 40px;
+.rightcontainerinput{
+    align-items: center;
+    justify-content: center;
 }
-
+.imagecard {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: -100px;
+    position: relative;
+}
+.recipe-single{
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
 .rightcontainerRecipes {
     background-color: rgb(211, 210, 208);
     padding: 30px;
     border-radius: 30px;
     text-align: center;
-    position: absolute;
-    left: 40%;
-    z-index: -1;
 }
 
 .recipetitle,
@@ -89,13 +92,15 @@ body {
     margin: 0 auto;
 }
 
-.Protein,
-.Carbs,
-.Fats {
+.protein,
+.carbs,
+.fats {
     padding-top: 5px;
     align-content: center;
     color: #2fa00d;
     font-weight: bold;
+    align-content: center;
+    justify-content: center;
 }
 
 
@@ -111,7 +116,27 @@ body {
 }
 .audiobtn 
 { 
-    width: 100%;}
+    width: 100%;
+}
+.ingredient-list li{
+    display: inline-block;
+    margin-left: 10px; 
+    list-style: disc;
+}
+.ingredient-list li::before {
+    content: "\f10c";
+    font-family: FontAwesome;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    vertical-align: top;
+    margin-right: 7px;
+    line-height: 25px;
+}
+.energy-result{
+    align-items: center;
+}
 
 @media screen and (min-width: 549px) (max-width: 1024px)  
 {
