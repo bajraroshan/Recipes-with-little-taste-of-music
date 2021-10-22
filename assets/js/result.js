@@ -1,9 +1,18 @@
+// Edamam related variable
 var appKey = "3ede82a48f3b73939f6b5d34debc9f2a";
 var appID = "89d029e6";
 var accessPoint = "https://api.edamam.com/api/recipes/v2?type=public&q=";
 var recipeSearchForm = $("#searchForm");
 var resultDiv = $(".resultbox");
 
+// Youtube related variable
+var ytAccessPoint = "https://www.googleapis.com/youtube/v3/playlistItems";
+var partandmaxResults = "?part=snippet&maxResults=1";
+var youtubekey = "AIzaSyBd7uSG8_YQsVb1tJsSUQkYH1Lpq1TWANQ";
+var ytDiv = $(".audio");
+
+
+// Uppercase First Letter
 const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 
 
@@ -23,8 +32,7 @@ recipeSearchForm.on('submit', function(e){
       alert.html('Please enter a valid Ingrident or/and Cusine. <strong>ingredient or/and Cusine</strong> cannot be blank.').fadeTo(2000, 500).fadeOut(500);
     } else {
         recipeMain(ingredientValue, cusineValue);
-
-        // pagination();
+        playID(cusineValue);
     }
 
     
@@ -37,7 +45,7 @@ function recipeMain(ingredientValue, cusineValue) {
         var recipeInfo = response.hits;
         resultDiv.empty();
         resultDiv.append(
-            '<div class="cell headertag1">Recipes for ' + uppercaseWords(ingredientValue) + ' in ' + uppercaseWords(cusineValue) + ' cuisine are: </div>'
+            '<div class="cell headertag1">Recipes for <span>' + uppercaseWords(ingredientValue) + '</span> in <span>' + uppercaseWords(cusineValue) + '</span> cuisine are: </div>'
         );
         
         $.each(recipeInfo, function(i) {
@@ -86,10 +94,52 @@ function recipeMain(ingredientValue, cusineValue) {
     });
 }
 
-function pagination() {
-    $(resultDiv).pagination({
-        // items: 100,
-        itemsOnPage: 5,
-        cssStyle: 'light-theme'
+// function pagination() {
+//     $(resultDiv).pagination({
+//         // items: 100,
+//         itemsOnPage: 5,
+//         cssStyle: 'light-theme'
+//     });
+// }
+
+function playID(cuisine){
+    if(cuisine == 'Asian' || cuisine == 'Chinese'){
+        var playlistId = 'PLfy0DLB0T_kiMZ8i3AGeQWGouY5BwIP1v';
+    } 
+    else if (cuisine == 'Indian') {
+        var playlistId = 'PLfy0DLB0T_kiAzis2XTsDQ984Q-H3rzT_';
+    }
+    else if (cuisine == 'Mediterranean') {
+        var playlistId = 'PLfy0DLB0T_kjw_3rAMCYG_BuHZEoBtk0_';
+    }
+    else if (cuisine == 'South American') {
+        var playlistId = 'PLfy0DLB0T_kha8HJtD_XGyBR26_cv3RGN';
+    }
+    else if (cuisine == 'Mexican') {
+        var playlistId = 'PLfy0DLB0T_khPvDDRjjPDpCsoRBtBmPP3';
+    }
+    else if (cuisine == 'Middle Eastern') {
+        var playlistId = 'PLfy0DLB0T_kj3tOlD-XEAlUPS5N68pWgQ';
+    }
+    else if (cuisine == 'Italian') {
+        var playlistId = 'PLfy0DLB0T_kjQUGzUa1D7xkVBJa6Rr-mZ';
+    }
+    else if (cuisine == 'French') {
+        var playlistId = 'PLfy0DLB0T_kjmrHHFZ8Ow0EuPdwKJwi2-';
+    }
+    
+
+    var ytApiUrl =  ytAccessPoint + partandmaxResults + '&playlistId=' + playlistId + '&key=' + youtubekey;
+    // console.log(ytApiUrl);
+
+    $.getJSON(ytApiUrl, function(data){
+
+        ytDiv.empty();
+        var yt_id = data.items[0].snippet.resourceId.videoId;
+        mainVid(yt_id);
+        // resultsloop(data);
     });
+}
+function mainVid(yt_id) {
+    ytDiv.append('<iframe src="https://www.youtube.com/embed/' + yt_id + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 }
