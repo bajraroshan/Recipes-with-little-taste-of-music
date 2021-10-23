@@ -2,58 +2,112 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    /* font-family: 'Lobster', cursive, sans-serif; */
+    font-family: 'Lobster', cursive, sans-serif;
+
     margin: 0 auto;
+
 }
 
 body {
     background-size: cover;
+    background-color: rgb(214, 214, 214);
+    color: #242323;
 }
 
+h3 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* left container */
 .logo {
     height: 200px;
     width: 200px;
 }
 
 .leftcontainer {
-    background-color: #383838;
+    background-color: #242323;
     min-height: 100vh;
+    border-right: 6px solid #2fa00d;
+    /* position:fixed; */
 }
 
-.headertag1 {
-    font-weight: bold;
-    text-align: left;
-    padding: 20px 60px;
-    font-size: 40px;
-}
-.headertag1 span{
-    color: #2fa00d;
-}
 .leftcontainerinput {
     margin: 0 auto;
     width: 60%;
+
 }
 
 .inputfelid {
     border-radius: 10px;
     height: 50px;
 }
-.rightcontainerinput{
+.inputfelid:hover {
+    background-color: #f2faf0;
+    color: #242323;
+    
+
+}
+
+.inputfelid:focus {
+    background-color: #e3f5df;
+}
+
+.headertag1 {
+    font-weight: bold;
+    text-align: left;
+    padding: 20px 60px;
+    font-size: 30px;
+    color: #242323;
+}
+
+.headertag1 span {
+    color: #2fa00d;
+}
+
+.searchbutton {
+    border-radius: 10px;
+    height: 6vh;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid rgb(238, 238, 238);
+    font-weight: bold;
+}
+
+.searchbutton:hover {
+    background-color: #2fa00d;
+    color: rgb(238, 238, 238);
+    box-shadow:  0px 0px 15px rgb(192, 245, 206);
+
+}
+
+.searchbutton:focus {
+    box-shadow: inset 0px 0px 15px rgb(64, 66, 64);
+    box-shadow:  0px 0px 15px rgb(192, 245, 206);
+    background-color: transparent;
+
+}
+/* right container */
+
+.rightcontainerinput {
     align-items: center;
     justify-content: center;
 }
+
 .imagecard {
     border-radius: 50%;
     overflow: hidden;
     margin-right: -100px;
     position: relative;
 }
-.recipe-single{
+
+.recipe-single {
     padding: 0 20px;
     margin-bottom: 20px;
 }
+
 .rightcontainerRecipes {
-    background-color: rgb(211, 210, 208);
+    background-color: rgb(201, 201, 201);
     padding: 30px;
     border-radius: 30px;
     text-align: center;
@@ -68,26 +122,27 @@ body {
 }
 
 .recipeingredients {
-    border-bottom: 2px solid #383838;
+    border-bottom: 2px solid #242323;
+    ;
+
 }
 
-.recipetitle {
-    font-weight: bold;
-}
+
 
 .calarios {
     text-align: center;
     font-weight: bold;
     color: #2fa00d;
-    font-size: 45px;
+    font-size: 30px;
     margin: 5px auto;
 }
 
-.calariostext {
+/* .calariostext {
     font-size: 20px;
     color: #383838;
     font-weight: bold;
-}
+    
+} */
 
 .big3 {
     text-align: center;
@@ -97,34 +152,21 @@ body {
 .protein,
 .carbs,
 .fats {
-    padding-top: 5px;
+    padding: 5px;
     align-content: center;
-    color: #2fa00d;
+    color: #383838;
     font-weight: bold;
     align-content: center;
     justify-content: center;
+    border-left: 2px dashed #2fa00d;
 }
 
-
-
-.searchbutton {
-    border-radius: 5px;
-    padding: 20px 80px;
-    width: 100%;
-}
-
-.button{
-    background-color: rgb(250, 214, 170);
-}
-.audiobtn 
-{ 
-    width: 100%;
-}
-.ingredient-list li{
+.ingredient-list li {
     display: inline-block;
-    margin-left: 10px; 
+    margin-left: 10px;
     list-style: disc;
 }
+
 .ingredient-list li::before {
     content: "\f10c";
     font-family: FontAwesome;
@@ -136,16 +178,43 @@ body {
     margin-right: 7px;
     line-height: 25px;
 }
-.energy-result{
+
+.energy-result {
     align-items: center;
 }
-.audio iframe{
+
+.audio iframe {
     /* visibility: hidden;
     opacity: 0; */
     width: 100%;
 }
 
-@media screen and (min-width: 549px) (max-width: 1024px)  
-{
+
+
+
+/* Medium only */
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .maincontext {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    .imagecard {
+        border-radius: 1%;
+        overflow: hidden;
+        /* margin-right: 100px; */
+        position: relative;
+    }
+
+    .leftcontainer {
+        
+        width: 100%;
+        height:0vh;
+
+    }
+    
 
 }
+

@@ -63,7 +63,7 @@ function recipeMain(ingredientValue, cusineValue) {
             resultDiv.append(
                     '<div class="recipe-single">' +
                     '<div class="cell">' +
-                    '<div class="grid-x rightcontainerinput">' +
+                    '<div class="grid-x  rightcontainerinput">' +
                     '<div class=" cell large-2 imagecard">' +
                     '<img src=' + recipeImage + ' alt="recipe for ' + recipeTitle + '" />' +
                     '</div>' +
