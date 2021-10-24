@@ -99,8 +99,8 @@ function recipeMain(ingredientValue, cusineValue) {
                     '<div class="cell large-6  big3">' +
                     '<div class="grid-x">' +
                     '<div class="cell large-3 protein"><p>Protien: ' + protienCount + '</span></p></div>'  +
-                    '<div class="cell large-3 carbs"><p>Protien: ' + carbsCount + '</span></p></div>'  +
-                    '<div class="cell large-3 fats"><p>Protien: ' + fatCount + '</span></p></div>'  +
+                    '<div class="cell large-3 carbs"><p>carbs: ' + carbsCount + '</span></p></div>'  +
+                    '<div class="cell large-3 fats"><p>fat: ' + fatCount + '</span></p></div>'  +
                     '</div>' +
                     '</div>'
             );
