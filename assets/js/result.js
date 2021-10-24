@@ -29,7 +29,9 @@ recipeSearchForm.on('submit', function(e){
     var ingredientValue = $("#ingredient").val();
     var cusineValue = $("#cuisine").val();
     if(ingredientValue.length == 0 || cusineValue == 0){
-      alert.html('Please enter a valid Ingrident or/and Cusine. <strong>ingredient or/and Cusine</strong> cannot be blank.').fadeTo(2000, 500).fadeOut(500);
+        displayerror()
+        // 
+    //   alert.html('Please enter a valid Ingrident or/and Cusine. <strong>ingredient or/and Cusine</strong> cannot be blank.').fadeTo(2000, 500).fadeOut(500);
     } else {
         recipeMain(ingredientValue, cusineValue);
         playID(cusineValue);
@@ -38,9 +40,21 @@ recipeSearchForm.on('submit', function(e){
     
   });
 
+function displayerror() {
+    var time = 5;
+    var timerInterval = setInterval(function () {
+        time--;
+        document.querySelector('.errormessge').innerHTML ='Please enter a valid Cusine or item!'
+        if (time === 0) {
+            clearInterval(timerInterval);
+            document.querySelector('.errormessge').innerHTML = "";
+        }
+    }, 1000);
+}
+
 function recipeMain(ingredientValue, cusineValue) {
     var apiUrl =  accessPoint + ingredientValue + '&app_id=' + appID + '&app_key=' + appKey + '&cuisineType=' + cusineValue;
-    
+    // console.log(apiUrl)
     $.get(apiUrl).then(function(response){
         var recipeInfo = response.hits;
         resultDiv.empty();
