@@ -44,7 +44,6 @@ h3 {
     background-color: var(--container-color);
     min-height: 100vh;
     border-right: 6px solid var(--color3);
-    /* position:fixed; */
 }
 
 .leftcontainerinput {
@@ -57,7 +56,7 @@ h3 {
     border-radius: 10px 10px 0px 0px;
     height: 50px;
     background-color: transparent;
-    border: 0px solid var(--border-color);
+    border: 1px solid var(--container-color);
     border-bottom: 3px solid var(--border-color);
     
     color: var(--inputtext-color);
@@ -65,7 +64,7 @@ h3 {
 
 .inputfelid:hover {
     background-color: #313131;
-    color: var(--container-color);
+    /* color: var(--container-color); */
     transition: 10px;
 
 
@@ -75,6 +74,7 @@ h3 {
 .inputfelid:focus {
     background-color: #3d3d3d;
     color: #f2faf0;
+    border-bottom: 3px solid var(--border-color);
 }
 
 .headertag1 {
@@ -90,11 +90,11 @@ h3 {
 }
 .searchbutton {
     border-radius: 10px;
-    height: 6vh;
     width: 100%;
     background-color: transparent;
     border: 1px solid #f2faf0;
     font-weight: bold;
+    padding: 15px;
     /* transition: 0.5s; */
 }
 
@@ -102,7 +102,7 @@ h3 {
 .searchbutton:hover {
     background-color:var(--color3);
     color: #f2faf0;
-    border: 0px solid var(--color3);
+    border: 1px solid var(--color3);
 
 
 }
@@ -120,10 +120,32 @@ h3 {
 }
 
 /* right container */
-
+.rightcontainer{
+    position: relative;
+    right: 0;
+}
 .rightcontainerinput {
     align-items: center;
     justify-content: center;
+}
+
+.intro{
+    padding: 30px 60px;
+    text-align: center;
+}
+
+.intro h2{
+    font-family: inherit;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.intro h2 span{
+    color: var(--color3);
+}
+
+.intro p strong{
+    color: var(--color3);
 }
 
 .imagecard {
@@ -149,7 +171,7 @@ h3 {
 .recipeingredients,
 .calarios {
     width: 80%;
-    margin: 5px auto;
+    margin: 10px auto;
     text-align: center;
 }
 
@@ -166,7 +188,9 @@ h3 {
     font-size: 30px;
     margin: 5px auto;
 }
-
+.calarios p{
+    margin-bottom: 0;
+}
 
 .big3 {
     text-align: center;
@@ -182,7 +206,12 @@ h3 {
     font-weight: bold;
     align-content: center;
     justify-content: center;
-    border-left: 2px dashed var(--color3);
+    border-left: 2px dashed var(--container-color);
+}
+.protein p,
+.carbs p,
+.fats p{
+    margin-bottom: 0;
 }
 
 .ingredient-list li {
@@ -207,6 +236,10 @@ h3 {
     align-items: center;
 }
 
+.audio{
+    margin-top: 40px;
+}
+
 .audio iframe {
     /* visibility: hidden;
     opacity: 0; */
@@ -227,16 +260,25 @@ h3 {
     }
 
     .imagecard {
-        border-radius: 5%;
         overflow: hidden;
-        /* margin-right: 100px; */
+        margin-right: 0;
+        margin-bottom: -100px;
+        max-width: 200px;
         position: relative;
     }
 
+    .rightcontainerRecipes{
+        padding-top: 110px;
+    }
+
+    .protein, .carbs, .fats{
+        border-left: none;
+    }
     .leftcontainer {
 
         width: 100%;
-        height: 100vh;
+        min-height: auto;
+        padding-bottom: 50px;
 
     }
     .leftcontainerinput {
