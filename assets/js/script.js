@@ -136,7 +136,7 @@ prevPageBtn.click(function(e) {
     api(apiUrl, ingredientValue, cusineValue);
     prevPageBtn.empty();
     prevPageBtn.append(
-        '<button class="success button nextBtn" value=' + prev + '>Previous Page</button>'
+        '<button class="success button nextPrev" value=' + prev + '>Previous Page</button>'
     );
 });
 nextPageBtn.click(function(e) {
@@ -144,12 +144,14 @@ nextPageBtn.click(function(e) {
     ingredientValue = $('.nextBtn').data('ingrident');
     cusineValue = $('.nextBtn').data('cuisine');
     var prev = $('.nextBtn').data('prev');
-    $('.nextBtn').data('cuisine');
+    console.log(prev);
     
     api(apiUrl, ingredientValue, cusineValue);
+    console.log(apiUrl, ingredientValue, cusineValue);
+
     prevPageBtn.empty();
     prevPageBtn.append(
-        '<button class="success button nextBtn" value=' + prev + '>Previous Page</button>'
+        '<button class="success button nextPrev" value=' + prev + '>Previous Page</button>'
     );
 
 });
