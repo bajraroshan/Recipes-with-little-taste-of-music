@@ -5,6 +5,8 @@ var accessPoint = "https://api.edamam.com/api/recipes/v2?type=public&q=";
 var recipeSearchForm = $("#searchForm");
 var resultDiv = $(".resultbox");
 var alert = $('.alert');
+var nextPageBtn = $('.next-btn');
+var prevPageBtn = $('.prev-btn');
 
 // Youtube related variable
 var ytAccessPoint = "https://www.googleapis.com/youtube/v3/playlistItems";
@@ -53,12 +55,23 @@ function displayerror() {
     }, 1000);
 }
 
+
 function recipeMain(ingredientValue, cusineValue) {
     var apiUrl =  accessPoint + ingredientValue + '&app_id=' + appID + '&app_key=' + appKey + '&cuisineType=' + cusineValue;
     // console.log(apiUrl)
+
+    api(apiUrl, ingredientValue, cusineValue);
+}
+
+function api(apiUrl, ingredientValue, cusineValue){
     $.get(apiUrl).then(function(response){
         var recipeInfo = response.hits;
+        var nextPage = response._links.next.href;
+         var prev = apiUrl;
+        
+
         resultDiv.empty();
+        nextPageBtn.empty();
         resultDiv.append(
             '<div class="cell headertag1">Recipes for <span>' + uppercaseWords(ingredientValue) + '</span> in <span>' + uppercaseWords(cusineValue) + '</span> cuisine are: </div>'
         );
@@ -106,16 +119,40 @@ function recipeMain(ingredientValue, cusineValue) {
                     '</div>'
             );
         });
+
+        nextPageBtn.append(
+            '<button class="success button nextBtn" value=' + nextPage + ' data-ingrident=' + ingredientValue + ' data-cuisine=' + cusineValue + ' data-prev=' + prev + '>Next Page</button>'
+        );
     });
 }
 
-// function pagination() {
-//     $(resultDiv).pagination({
-//         // items: 100,
-//         itemsOnPage: 5,
-//         cssStyle: 'light-theme'
-//     });
-// }
+prevPageBtn.click(function(e) {
+    var apiUrl = e.target.value;
+    ingredientValue = $('.nextBtn').data('ingrident');
+    cusineValue = $('.nextBtn').data('cuisine');
+    var prev = $('.nextBtn').data('prev');
+    
+    api(apiUrl, ingredientValue, cusineValue);
+    prevPageBtn.empty();
+    prevPageBtn.append(
+        '<button class="success button nextBtn" value=' + prev + '>Previous Page</button>'
+    );
+});
+nextPageBtn.click(function(e) {
+    var apiUrl = e.target.value;
+    ingredientValue = $('.nextBtn').data('ingrident');
+    cusineValue = $('.nextBtn').data('cuisine');
+    var prev = $('.nextBtn').data('prev');
+    $('.nextBtn').data('cuisine');
+    
+    api(apiUrl, ingredientValue, cusineValue);
+    prevPageBtn.empty();
+    prevPageBtn.append(
+        '<button class="success button nextBtn" value=' + prev + '>Previous Page</button>'
+    );
+
+});
+
 
 function playID(cuisine){
     if(cuisine == 'Asian'){
@@ -174,7 +211,6 @@ function playID(cuisine){
     }
 
     var ytApiUrl =  ytAccessPoint + partandmaxResults + '&playlistId=' + playlistId + '&key=' + youtubekey;
-    // console.log(ytApiUrl);
 
     $.getJSON(ytApiUrl, function(data){
 
@@ -183,6 +219,7 @@ function playID(cuisine){
         mainVid(yt_id);
     });
 }
+
 function mainVid(yt_id) {
     ytDiv.append('<iframe src="https://www.youtube.com/embed/' + yt_id + '?autoplay=1" frameborder="0" allowfullscreen></iframe>');
 }
