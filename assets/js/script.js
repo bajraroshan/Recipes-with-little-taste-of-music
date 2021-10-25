@@ -71,7 +71,7 @@ function api(apiUrl, ingredientValue, cusineValue){
         
 
         resultDiv.empty();
-        nextPageBtn.empty();
+        
         resultDiv.append(
             '<div class="cell headertag1">Recipes for <span>' + uppercaseWords(ingredientValue) + '</span> in <span>' + uppercaseWords(cusineValue) + '</span> cuisine are: </div>'
         );
@@ -120,6 +120,7 @@ function api(apiUrl, ingredientValue, cusineValue){
             );
         });
 
+        nextPageBtn.empty();
         nextPageBtn.append(
             '<button class="success button nextBtn" value=' + nextPage + ' data-ingrident=' + ingredientValue + ' data-cuisine=' + cusineValue + ' data-prev=' + prev + '>Next Page</button>'
         );
