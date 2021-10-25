@@ -247,7 +247,19 @@ h3 {
     
 }
 
+.next_prev_btn{
+    text-align: center;
+}
 
+.next-btn, .prev-btn{
+    text-align: center;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.next-btn button, .prev-btn button{
+    border-radius: 5px;
+}
 
 
 /* Medium only */
